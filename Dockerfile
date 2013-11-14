@@ -9,7 +9,7 @@ RUN apt-get update
 RUN apt-get install -y nodejs
 
 # Install various node.js globals needed.
-RUN npm install -g coffee-script brunch
+RUN npm install -g coffee-script brunch bower
 
 # Install compass and other SCSS related gems
 RUN gem install compass --pre
