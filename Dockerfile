@@ -1,10 +1,12 @@
-FROM ubuntu
+FROM ubuntu:14.04
 MAINTAINER Kyle Mathews "mathews.kyle@gmail.com"
 
 RUN echo "deb http://us.archive.ubuntu.com/ubuntu/ precise universe" >> /etc/apt/sources.list
 
 # Install dependencies for building Ruby / Node.js modules.
-RUN apt-get install -y python-software-properties software-properties-common python python-setuptools git build-essential build-essential zlib1g-dev libssl-dev libreadline6-dev libyaml-dev curl
+RUN apt-get update; apt-get install -y python-software-properties software-properties-common \
+  python python-setuptools git build-essential zlib1g-dev \
+  libssl-dev libreadline6-dev libyaml-dev curl
 
 # Install node.js
 RUN add-apt-repository ppa:chris-lea/node.js
