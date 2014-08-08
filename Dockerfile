@@ -6,7 +6,7 @@ RUN echo "deb http://us.archive.ubuntu.com/ubuntu/ precise universe" >> /etc/apt
 # Install dependencies for building Ruby / Node.js modules.
 RUN apt-get update; apt-get install -y python-software-properties software-properties-common \
   python python-setuptools git build-essential zlib1g-dev \
-  libssl-dev libreadline6-dev libyaml-dev curl
+  libssl-dev libreadline6-dev libyaml-dev curl unzip
 
 # Install node.js
 RUN add-apt-repository ppa:chris-lea/node.js
