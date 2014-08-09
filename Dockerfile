@@ -11,7 +11,7 @@ RUN apt-get update; apt-get install -y python-software-properties software-prope
 # Install node.js
 RUN add-apt-repository ppa:chris-lea/node.js
 RUN apt-get -y update
-RUN apt-get install -y nodejs
+RUN apt-get install -y nodejs=0.10.30
 
 # Node 
 #RUN npm config set strict-ssl false
