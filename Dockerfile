@@ -13,8 +13,11 @@ RUN add-apt-repository ppa:chris-lea/node.js
 RUN apt-get -y update
 RUN apt-get install -y nodejs
 
-# Node 
+# Node
 #RUN npm config set strict-ssl false
+
+# Install a few node.js build tools as globals.
+npm install -g gulp cult grunt-cli
 
 # Install Ruby
 RUN mkdir /tmp/ruby;\
