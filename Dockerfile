@@ -11,13 +11,10 @@ RUN apt-get update; apt-get install -y python-software-properties software-prope
 # Install node.js
 RUN add-apt-repository ppa:chris-lea/node.js
 RUN apt-get -y update
-RUN apt-get install -y nodejs
+RUN apt-get install -y nodejs=0.10.30-1chl1~trusty1
 
 # Node
 #RUN npm config set strict-ssl false
-
-# Install a few node.js build tools as globals.
-npm install -g gulp cult grunt-cli
 
 # Install Ruby
 RUN mkdir /tmp/ruby;\
