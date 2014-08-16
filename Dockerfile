@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 MAINTAINER Kyle Mathews "mathews.kyle@gmail.com"
 
-RUN echo "deb http://us.archive.ubuntu.com/ubuntu/ precise universe" >> /etc/apt/sources.list
+RUN echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe" >> /etc/apt/sources.list
 
 # Install dependencies for building Ruby / Node.js modules.
 RUN apt-get update; apt-get install -y python-software-properties software-properties-common \
