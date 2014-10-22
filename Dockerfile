@@ -1,20 +1,17 @@
 FROM ubuntu:14.04
 MAINTAINER Kyle Mathews "mathews.kyle@gmail.com"
 
-RUN echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe" >> /etc/apt/sources.list
-
 # Install dependencies for building Ruby / Node.js modules.
-RUN apt-get update; apt-get install -y python-software-properties software-properties-common \
-  python python-setuptools git build-essential zlib1g-dev \
-  libssl-dev libreadline6-dev libyaml-dev curl unzip
-
-# Install node.js
-RUN add-apt-repository ppa:chris-lea/node.js
-RUN apt-get -y update
-RUN apt-get install -y nodejs=0.10.32-1chl1~trusty1
-
-# Node
-#RUN npm config set strict-ssl false
+RUN echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe" >> /etc/apt/sources.list && \
+  apt-get update && \
+  apt-get install -y python-software-properties software-properties-common \
+    python python-setuptools git build-essential zlib1g-dev \
+    libssl-dev libreadline6-dev libyaml-dev curl unzip && \
+  add-apt-repository ppa:chris-lea/node.js && \
+  apt-get update && \
+  apt-get install -y nodejs=0.10.32-1chl1~trusty1 && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/*
 
 # Install Ruby
 RUN mkdir /tmp/ruby;\
@@ -28,6 +25,3 @@ RUN mkdir /tmp/ruby;\
 
 # Install Bundler
 RUN gem install --no-rdoc --no-ri bundler
-
-# Cleanup
-RUN apt-get clean
