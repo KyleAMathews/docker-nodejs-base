@@ -9,7 +9,7 @@ RUN echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe" >> /etc/apt/
     libssl-dev libreadline6-dev libyaml-dev curl unzip && \
   add-apt-repository ppa:chris-lea/node.js && \
   apt-get update && \
-  apt-get install -y nodejs=0.10.32-1chl1~trusty1 && \
+  apt-get install -y nodejs=0.10.33-1chl1~trusty1 && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
