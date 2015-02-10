@@ -3,7 +3,7 @@ MAINTAINER Kyle Mathews "mathews.kyle@gmail.com"
 
 ENV RUBY_MAJOR 2.1
 ENV RUBY_VERSION 2.1.5
-ENV NODEJS_VERSION 0.10.35
+ENV NODEJS_VERSION 0.10.36
 
 # Install dependencies for building Ruby / Node.js modules.
 RUN echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe" >> /etc/apt/sources.list && \
